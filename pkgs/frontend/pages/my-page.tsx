@@ -64,7 +64,7 @@ export default function MyPage() {
   }, []);
 
   return (
-    <div className="h-screen w-screen flex flex-row">
+    <div className="h-screen w-screen flex flex-row md:flex-col-reverse">
       <NavigationSidebar />
       <div className="h-full w-full flex flex-row px-10 justify-between">
       {isLoading ? (
@@ -73,7 +73,7 @@ export default function MyPage() {
           </div>
         ) : (
           <>
-            <div className="h-full w-full flex items-end">
+            <div className="h-full flex items-end">
               <div className="w-fit h-fit rounded-t-2xl flex flex-col space-y-14 px-10 py-14 bg-white shadow-lg">
                 <h1 className="text-Title mx-auto">My Page</h1>
                 <div className="px-10 py-6 space-y-10">
@@ -101,7 +101,7 @@ export default function MyPage() {
                 )}
               </div>
             </div>
-            <div className="relative p-10 [&_div]:flex [&_div]:justify-center [&_div]:items-center">
+            <div className="h-screen w-full flex justify-end relative p-10 [&_div]:flex [&_div]:justify-center [&_div]:items-center">
               {txCount == 0 ? (
                 <ScoreCircle 
                   score={0}
