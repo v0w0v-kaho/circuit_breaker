@@ -8,13 +8,13 @@ module.exports = {
   theme: {
     extend: {
       screens: {
-        /* ~359, 360~767, 768~1279, 1280~1365, 1366~1919, 1920~ */
-        "2xs": { max: "359px" },
-        xs: { max: "767px" },
-        sm: { max: "1279px" },
-        md: { max: "1365px" },
-        lg: { max: "1919px" },
-        xl: { min: "1920px" },
+        /* ~320, 321~360, 361~768, 769~1280, 1281~1366, 1367~1920 */
+        "2xs" : { max: "320px" },
+        "xs"  : { max:  "360px" },
+        "sm"  : { max:  "768px" },
+        "md"  : { max:  "1280px" },
+        "lg"  : { max: "1366px" },
+        "xl"  : { min: "1367px" },
       },
 
       spacing: {
@@ -198,6 +198,13 @@ module.exports = {
             lineHeight: "2.06rem",
             letterSpacing: "-0.04em",
             fontWeight: "600",
+          },
+        ],
+
+        Nav: [
+          "0.875rem",
+          {
+            lineHeight: "1.375rem",
           },
         ],
       },

@@ -33,16 +33,13 @@ const Input: React.FC<InputProps> = ({
   return (
     <div className="w-full">
       <label htmlFor={id}>
-        <div
-          className={`rounded-2xl lg:rounded-lg border-2 ${isInputFocused ? "border-Input30" : "border-transparent"
-            }`}
-        >
+        <div className={`rounded-2xl lg:rounded-lg border-2 
+        ${isInputFocused ? "border-Input30" : "border-transparent"}`}>
           <div
-            className={`rounded-2xl lg:rounded-lg px-8 py-4 border-2 lg:px-5 lg:py-3 xs:px-3 xs:py-1 ${isInputFocused
-              ? "bg-white border-Input10"
-              : "bg-Input30 border-transparent"
-              }`}
-          >
+            className={`rounded-2xl px-8 py-4 border-2
+            lg:rounded-lg lg:px-5 lg:py-2.5
+            xs:px-3 xs:py-1
+            ${isInputFocused ? "bg-white border-Input10" : "bg-Input30 border-transparent"}`}>
             <div className="flex flex-row items-center justify-between">
               <div className="relative h-11 w-full flex text-left">
                 <span
@@ -70,7 +67,7 @@ const Input: React.FC<InputProps> = ({
                   />
                 </div>
               </div>
-              <Icon name={icon} className={`ml-8 ${isInputFocused ? "fill-Primary10" : "fill-Input20"}`} />
+              <Icon name={icon} size={24} className={`ml-2 overflow-visible ${isInputFocused ? "fill-Primary10" : "fill-Input20"}`} />
             </div>
           </div>
         </div>

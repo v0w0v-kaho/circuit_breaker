@@ -1,4 +1,5 @@
 import Input from "@/components/input/input";
+import Button from "@/components/button";
 import Loading from "@/components/loading";
 import { NavigationSidebar } from "@/components/navigation/navigationSidebar";
 import ScoreValutJson from "@/contracts/mock/ScoreVault.sol/ScoreVault.json";
@@ -17,7 +18,7 @@ export default function Verify() {
   /**
    * verify method
    */
-  const verify = async() => {
+  const verify = async () => {
     setIsLoading(true);
     try {
 
@@ -31,7 +32,7 @@ export default function Verify() {
       const encryptedTotalScore = resRead[0];
       const encryptedCount = resRead[1];
       console.log("encryptedTotalScore:", encryptedTotalScore);
-       
+
       const sampleValue = {
         name: "mame3",
         totalScore: "6372169231563658595",
@@ -52,11 +53,11 @@ export default function Verify() {
           lineNumber: score,
         }),
       });
-  
+
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
-  
+
       const result = await response.json();
       console.log(result); // ここで取得した結果を使用する
       // 例: 結果に応じてUIを更新
@@ -100,21 +101,24 @@ export default function Verify() {
     } finally {
       setIsLoading(false);
     }
-}
+  }
 
   return (
-    <div className="h-screen w-screen flex flex-row bg-white md:flex-col-reverse">
+    <div className="h-screen w-screen flex flex-row sm:flex-col-reverse">
       <NavigationSidebar />
-      <div className="h-full w-full p-20 bg-white md:p-10">
+      <div className="h-full p-20 bg-white sm:p-10 xs:p-5
+      w-[calc(100%-296px)] lg:w-[calc(100%-204.9px)] md:max-w-[calc(100%-192px)] sm:min-w-full">
         {isLoading ? (
           <div className="flex items-center justify-center h-screen">
             <Loading />
           </div>
         ) : (
-          <div className="h-full w-full rounded-2xl flex flex-col justify-between place-items-center py-20 px-10 text-center shadow-lg sm:py-7 xs:px-4">
+          <div className="h-full min-h-[450px] w-full rounded-2xl flex flex-col justify-between place-items-center py-20 px-10 text-center shadow-lg 
+          sm:py-7 xs:px-4">
             <h1 className="text-Primary10 text-Title">Verification</h1>
 
-            <div className="w-[45%] h-[30%] flex flex-col min-h-40 justify-between sm:w-full">
+            <div className="w-[60%] h-[46%] min-h-48 max-h-64 flex flex-col justify-between space-y-2
+            md:w-[80%] sm:min-w-full">
               <Input
                 labelText="Address"
                 id="Address"
@@ -139,14 +143,9 @@ export default function Verify() {
               />
             </div>
             <div>
-              <button 
-                className="group rounded-lg bg-Primary10 border-2 border-transparent hover:bg-Primary20 active:bg-Primary30 focus-visible:border-black disabled:bg-Primary50"
-                onClick={async() => { await verify()}}
-              >
-                <div className="rounded-lg px-18 py-4 border border-transparent group-focus-visible:border-white">
-                  <span className="text-Button text-white">Verify</span>
-                </div>
-              </button>
+              <Button 
+                onClick={async () => { await verify() }}
+                buttonLabel="Verify"/>
             </div>
           </div>
         )}
