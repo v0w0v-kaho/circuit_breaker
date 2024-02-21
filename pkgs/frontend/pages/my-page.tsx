@@ -64,12 +64,13 @@ export default function MyPage() {
   }, []);
 
   return (
-    <div className="h-screen w-screen flex flex-row md:flex-col-reverse">
+    <div className="h-screen w-screen flex flex-row sm:flex-col-reverse">
       <NavigationSidebar />
-      <div className="h-full w-full flex flex-row px-10 justify-between">
+      <div className="h-full flex flex-row px-10 justify-between
+      w-[calc(100%-296px)] lg:w-[calc(100%-204.9px)] md:max-w-[calc(100%-192px)] sm:min-w-full">
       {isLoading ? (
           <div className="flex items-center justify-center h-screen">
-            <Loading/>
+            <Loading />
           </div>
         ) : (
           <>

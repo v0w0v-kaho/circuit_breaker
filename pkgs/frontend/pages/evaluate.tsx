@@ -1,4 +1,5 @@
 import Input from "@/components/input/input";
+import Button from "@/components/button";
 import Loading from "@/components/loading";
 import { NavigationSidebar } from "@/components/navigation/navigationSidebar";
 import ScoreValutForwarderJson from "@/contracts/mock/ScoreValutForwarder.sol/ScoreVaultForwarder.json";
@@ -237,18 +238,21 @@ export default function Evaluate() {
   }, []);
 
   return (
-    <div className="h-screen w-screen flex flex-row bg-white md:flex-col-reverse">
+    <div className="h-screen w-screen flex flex-row sm:flex-col-reverse">
       <NavigationSidebar />
-      <div className="h-full w-full p-20 bg-white md:p-10">
+      <div className="h-full p-20 bg-white sm:p-10 xs:p-5
+      w-[calc(100%-296px)] lg:w-[calc(100%-204.9px)] md:max-w-[calc(100%-192px)] sm:min-w-full">
         {isLoading ? (
           <div className="flex items-center justify-center h-screen">
             <Loading />
           </div>
         ) : (
-          <div className="h-full w-full rounded-2xl flex flex-col justify-between place-items-center py-20 px-10 text-center shadow-lg sm:py-7 xs:px-4">
+          <div className="h-full min-h-[450px] w-full rounded-2xl flex flex-col justify-between place-items-center py-20 px-10 text-center shadow-lg 
+          sm:py-7 xs:px-4">
               <h1 className="text-Primary10 text-Title">Send an evaluate</h1>
 
-              <div className="w-[45%] h-[30%] flex flex-col min-h-40 justify-between sm:w-full">
+              <div className="w-[60%] h-[46%] min-h-48 max-h-64 flex flex-col justify-between space-y-2
+            md:w-[80%] sm:min-w-full">
                 <Input
                   labelText="Address"
                   id="Address"
@@ -273,14 +277,9 @@ export default function Evaluate() {
                 />
               </div>
               <div>
-                <button
-                  className="group rounded-lg bg-Primary10 border-2 border-transparent hover:bg-Primary20 active:bg-Primary30 focus-visible:border-black disabled:bg-Primary50"
-                  onClick={async () => { await setScore() }}
-                >
-                  <div className="rounded-lg px-18 py-4 border border-transparent group-focus-visible:border-white">
-                    <span className="text-Button text-white">Send</span>
-                  </div>
-                </button>
+                <Button 
+                onClick={async () => { await setScore() }}
+                buttonLabel="Send"/>
               </div>
           </div>
         )}
