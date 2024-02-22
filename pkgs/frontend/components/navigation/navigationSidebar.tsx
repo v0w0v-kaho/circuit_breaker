@@ -30,7 +30,7 @@ export const NavigationSidebar = () => {
     return (
         <div className="h-full flex flex-col justify-center px-4 sticky top-0 bg-Primary10
         w-[296px] lg:w-[204.9px] md:max-w-[192px] sm:min-w-full 
-        sm:h-fit sm:flex-row xs:p-1">
+        sm:h-fit sm:flex-row sm:sticky sm:bottom-0 xs:p-1">
             <div className="absolute top-4 left-4 sm:hidden">
                 <Logomark color={"white"} />
             </div>

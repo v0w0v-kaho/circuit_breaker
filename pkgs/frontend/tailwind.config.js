@@ -177,8 +177,20 @@ module.exports = {
           },
         ],
 
-        AvgScore: [
-          "6rem",
+        AvgScoreLg: [
+          "5.2rem",
+          {
+            fontWeight: "500",
+          },
+        ],
+        AvgScoreMd: [
+          "3.2rem",
+          {
+            fontWeight: "500",
+          },
+        ],
+        AvgScoreSm: [
+          "2.4rem",
           {
             fontWeight: "500",
           },
