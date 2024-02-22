@@ -24,19 +24,19 @@ const ScoreCircle:FC<ProgressCircleProps> = ({score, maxScore }) => {
 
     return (
         <>
-            <div className="relative h-full aspect-square rounded-full bg-Gray30">
+            <div className="relative w-full aspect-square rounded-full bg-Gray30">
                 <svg className="h-68pct aspect-square rounded-full bg-white shadow-md" viewBox="0 0 680 680" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="340" cy="340" r="280" stroke="#ECECF1" stroke-width="40" stroke-dasharray="3 25" />
                     <circle cx="340" cy="340" r="228" stroke="#ECECF1" stroke-width="24" />
                     <circle cx="340" cy="340" r="186" stroke="#ECECF1" stroke-width="12" />
                 </svg>
-                <div className="absolute h-31pct aspect-square rounded-full bg-Primary10 shadow-lg">
+                <div className="absolute h-31pct w-31pct rounded-full bg-Primary10 shadow-lg font-mono text-AvgScoreLg lg:text-AvgScoreMd xs:text-AvgScoreSm text-white">
                     {maxScore == 0 ? (
-                        <span className="font-mono text-AvgScore text-white">
-                            0
+                        <span>
+                            100
                         </span>
                     ) : (
-                        <span className="font-mono text-AvgScore text-white">
+                        <span>
                             {score}
                         </span>
                     )}
